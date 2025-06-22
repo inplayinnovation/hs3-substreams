@@ -1,0 +1,532 @@
+{
+  "address": "6xw9f54fZrCFyhRtNBfA9tzuvwzUfe4DUw33JD1uyyfd",
+  "metadata": {
+    "name": "hs_3_solana",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "finalize_wager_v2",
+      "discriminator": [
+        138,
+        31,
+        246,
+        100,
+        173,
+        20,
+        177,
+        213
+      ],
+      "accounts": [
+        {
+          "name": "wager",
+          "writable": true
+        },
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_wager",
+      "discriminator": [
+        107,
+        74,
+        43,
+        36,
+        7,
+        67,
+        110,
+        204
+      ],
+      "accounts": [
+        {
+          "name": "wager",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        },
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "user_token_account",
+          "writable": true
+        },
+        {
+          "name": "operator_token_account",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "initialize_wager_v2",
+      "discriminator": [
+        70,
+        35,
+        17,
+        196,
+        253,
+        10,
+        179,
+        245
+      ],
+      "accounts": [
+        {
+          "name": "wager",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        },
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "wager_mint"
+        },
+        {
+          "name": "payout_mint"
+        },
+        {
+          "name": "user_token_account",
+          "writable": true
+        },
+        {
+          "name": "operator_token_account",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "wager_amount",
+          "type": "u64"
+        },
+        {
+          "name": "ipfs_cid",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "resolve_wager",
+      "discriminator": [
+        31,
+        179,
+        1,
+        228,
+        83,
+        224,
+        1,
+        123
+      ],
+      "accounts": [
+        {
+          "name": "wager",
+          "writable": true
+        },
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user_token_account",
+          "writable": true
+        },
+        {
+          "name": "operator_token_account",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "payout_amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "resolve_wager_v2",
+      "discriminator": [
+        151,
+        117,
+        255,
+        84,
+        152,
+        234,
+        173,
+        35
+      ],
+      "accounts": [
+        {
+          "name": "wager",
+          "writable": true
+        },
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user_token_account",
+          "writable": true
+        },
+        {
+          "name": "operator_token_account",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "payout_amount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Wager",
+      "discriminator": [
+        3,
+        110,
+        53,
+        190,
+        113,
+        31,
+        230,
+        40
+      ]
+    },
+    {
+      "name": "WagerV2",
+      "discriminator": [
+        246,
+        145,
+        14,
+        247,
+        13,
+        43,
+        105,
+        78
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "WagerInitialized",
+      "discriminator": [
+        221,
+        20,
+        75,
+        54,
+        118,
+        4,
+        126,
+        201
+      ]
+    },
+    {
+      "name": "WagerInitializedV2",
+      "discriminator": [
+        117,
+        108,
+        246,
+        75,
+        91,
+        169,
+        150,
+        27
+      ]
+    },
+    {
+      "name": "WagerResolved",
+      "discriminator": [
+        166,
+        83,
+        14,
+        127,
+        130,
+        175,
+        204,
+        13
+      ]
+    },
+    {
+      "name": "WagerResolvedV2",
+      "discriminator": [
+        31,
+        191,
+        171,
+        203,
+        211,
+        56,
+        129,
+        255
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "WagerNotResolved",
+      "msg": "Wager must be resolved before it can be finalized"
+    }
+  ],
+  "types": [
+    {
+      "name": "Wager",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "operator",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WagerInitialized",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "wager",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "operator",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WagerInitializedV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "wager",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "operator",
+            "type": "pubkey"
+          },
+          {
+            "name": "wager_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "payout_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "ipfs_cid",
+            "type": "string"
+          },
+          {
+            "name": "wager_amount",
+            "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WagerResolved",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "wager",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "operator",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "payout_amount",
+            "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WagerResolvedV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "wager",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "operator",
+            "type": "pubkey"
+          },
+          {
+            "name": "wager_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "payout_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "wager_amount",
+            "type": "u64"
+          },
+          {
+            "name": "payout_amount",
+            "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WagerV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "operator",
+            "type": "pubkey"
+          },
+          {
+            "name": "wager_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "payout_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "ipfs_cid",
+            "type": "string"
+          },
+          {
+            "name": "wager_amount",
+            "type": "u64"
+          },
+          {
+            "name": "total_paid_out",
+            "type": {
+              "option": "i64"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

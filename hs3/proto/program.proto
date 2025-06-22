@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+package substreams.v1.program;
+
+message Data {
+    repeated WagerInitialized_Event wager_initialized_event_list = 1;
+    repeated WagerInitializedV2_Event wager_initialized_v2_event_list = 2;
+    repeated WagerResolved_Event wager_resolved_event_list = 3;
+    repeated WagerResolvedV2_Event wager_resolved_v2_event_list = 4;
+    repeated FinalizeWagerV2_Instruction finalize_wager_v2_instruction_list = 5;
+    repeated InitializeWager_Instruction initialize_wager_instruction_list = 6;
+    repeated InitializeWagerV2_Instruction initialize_wager_v2_instruction_list = 7;
+    repeated ResolveWager_Instruction resolve_wager_instruction_list = 8;
+    repeated ResolveWagerV2_Instruction resolve_wager_v2_instruction_list = 9;
+}
+message WagerInitialized_Event {
+  string trx_hash = 1;
+      string wager = 2;
+      string user = 3;
+      string operator = 4;
+      string mint = 5;
+      uint64 amount = 6;
+      int64 timestamp = 7;
+}message WagerInitializedV2_Event {
+  string trx_hash = 1;
+      string wager = 2;
+      string user = 3;
+      string operator = 4;
+      string wager_mint = 5;
+      string payout_mint = 6;
+      string ipfs_cid = 7;
+      uint64 wager_amount = 8;
+      int64 timestamp = 9;
+}message WagerResolved_Event {
+  string trx_hash = 1;
+      string wager = 2;
+      string user = 3;
+      string operator = 4;
+      string mint = 5;
+      uint64 payout_amount = 6;
+      int64 timestamp = 7;
+}message WagerResolvedV2_Event {
+  string trx_hash = 1;
+      string wager = 2;
+      string user = 3;
+      string operator = 4;
+      string wager_mint = 5;
+      string payout_mint = 6;
+      uint64 wager_amount = 7;
+      uint64 payout_amount = 8;
+      int64 timestamp = 9;
+}
+
+message FinalizeWagerV2_Instruction {
+  string trx_hash = 1;
+    string acct_wager = 2;
+    string acct_operator = 3;
+}
+message InitializeWager_Instruction {
+  string trx_hash = 1;
+    uint64 amount = 2;
+    string acct_wager = 3;
+    string acct_user = 4;
+    string acct_operator = 5;
+    string acct_mint = 6;
+    string acct_user_token_account = 7;
+    string acct_operator_token_account = 8;
+}
+message InitializeWagerV2_Instruction {
+  string trx_hash = 1;
+    uint64 wager_amount = 2;
+    string ipfs_cid = 3;
+    string acct_wager = 4;
+    string acct_user = 5;
+    string acct_operator = 6;
+    string acct_wager_mint = 7;
+    string acct_payout_mint = 8;
+    string acct_user_token_account = 9;
+    string acct_operator_token_account = 10;
+}
+message ResolveWager_Instruction {
+  string trx_hash = 1;
+    uint64 payout_amount = 2;
+    string acct_wager = 3;
+    string acct_operator = 4;
+    string acct_user_token_account = 5;
+    string acct_operator_token_account = 6;
+}
+message ResolveWagerV2_Instruction {
+  string trx_hash = 1;
+    uint64 payout_amount = 2;
+    string acct_wager = 3;
+    string acct_operator = 4;
+    string acct_user_token_account = 5;
+    string acct_operator_token_account = 6;
+}
+
